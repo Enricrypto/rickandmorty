@@ -1,0 +1,23 @@
+.characters-list {
+  list-style: none;
+  margin: 40px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  gap: 32px;
+}
+
+.character {
+  text-align: center;
+}
+
+.character h2,
+.character p {
+  margin: 0;
+}
+
+.character img {
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
