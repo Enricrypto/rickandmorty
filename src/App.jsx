@@ -34,6 +34,17 @@ export const App = () => {
     setSearchResults(result)
   }
 
+  const handleSearch = () => {
+    const result = characterList.filter((item) => {
+      if (typeof item.name === 'string') {
+        return item.name.toLowerCase().includes(searchCharacter.toLowerCase())
+      }
+      return false
+    })
+
+    setSearchResults(result)
+  }
+
   const loadMoreCharacters = () => {
     setDisplayedCharacters((prevCount) => prevCount + charactersPerPage)
   }
@@ -45,17 +56,17 @@ export const App = () => {
           <img src={Logo} alt='Rick and Morty Logo' />
         </div>
         <h2>Search by Character</h2>
-        <form>
+        <div className='search-form'>
           <input
             onChange={handleChange}
             value={searchCharacter}
             name='character'
             placeholder='Rick Sanchez, Morty Smith... '
           />
-          <button className='search-button' type='submit'>
+          <button className='search-button' onClick={handleSearch}>
             Search
           </button>
-        </form>
+        </div>
       </header>
       <main>
         <Card

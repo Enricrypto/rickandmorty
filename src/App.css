@@ -28,7 +28,7 @@ header {
   width: 600px;
 }
 
-form {
+.search-form {
   display: flex;
   width: 300px;
   gap: 5px;
