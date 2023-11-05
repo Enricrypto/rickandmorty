@@ -34,7 +34,9 @@ export const App = () => {
     setSearchResults(result)
   }
 
-  const handleSearch = () => {
+  const handleSearch = (event) => {
+    event.preventDefault()
+
     const result = characterList.filter((item) => {
       if (typeof item.name === 'string') {
         return item.name.toLowerCase().includes(searchCharacter.toLowerCase())
@@ -56,17 +58,17 @@ export const App = () => {
           <img src={Logo} alt='Rick and Morty Logo' />
         </div>
         <h2>Search by Character</h2>
-        <div className='search-form'>
+        <form onSubmit={handleSearch}>
           <input
             onChange={handleChange}
             value={searchCharacter}
             name='character'
             placeholder='Rick Sanchez, Morty Smith... '
           />
-          <button className='search-button' onClick={handleSearch}>
+          <button className='search-button' type='submit'>
             Search
           </button>
-        </div>
+        </form>
       </header>
       <main>
         <Card
