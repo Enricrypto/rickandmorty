@@ -1,3 +1,6 @@
+Webiste Deployed on Vercel: https://rickandmorty-seven-flame.vercel.app/
+
+
 Requisitos técnicos:
 
 − Conexión a la API: es necesario obtener los datos utilizando la API: https://rickandmortyapi.com/documentation
